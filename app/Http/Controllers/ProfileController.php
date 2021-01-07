@@ -30,6 +30,7 @@ class ProfileController extends Controller
                 Rule::unique('users')->ignore($user),
                 'alpha_dash'
             ],
+            'avatar'=> ['file'],
             'name' => ['required', 'string', 'max:255'],
             'email' => [
                 'required',
@@ -42,6 +43,10 @@ class ProfileController extends Controller
         ]);
 
         $attributes['username'] = '@'.$attributes['username'];
+
+        if ($request->avatar){
+            $attributes['avatar']   = $request->avatar->store('avatars');
+        }
 
         $user->update($attributes);
 

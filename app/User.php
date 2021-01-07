@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'name', 'email', 'password',
+        'username', 'name', 'email', 'password','avatar'
     ];
 
     /**
@@ -40,9 +40,14 @@ class User extends Authenticatable
     /**
      * @return string
      */
-    public function getAvatarAttribute()
+    public function getAvatarAttribute($value)
     {
-        return 'https://i.pravatar.cc/200?u='.$this->email;
+        return asset($value ? "storage/$value" : '/images/default-avatar.png') ;
+    }
+
+    public function setPasswordAttribute($value) {
+
+         $this->attributes['password'] = bcrypt($value);
     }
 
 

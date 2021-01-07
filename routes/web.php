@@ -28,6 +28,7 @@ Route::post('/tweets', 'TweetsController@store');
 Route::get('/profile/{user:username}', 'ProfileController@show')->name('profile');
 Route::post('/profile/{user:username}/follow', 'FollowController@store');
 Route::get('/profile/{user:username}/edit', 'ProfileController@edit')->middleware('can:edit,user');
-Route::patch('/profile/{user:username}', 'ProfileController@update');
+Route::patch('/profile/{user:username}', 'ProfileController@update')->middleware('can:edit,user');
 
+Route::get('/explore', 'ExploreController@index');
 });
