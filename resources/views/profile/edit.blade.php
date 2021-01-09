@@ -45,6 +45,24 @@
 
         <div class="mb-6">
             <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                   for="description"
+            >
+                Description
+            </label>
+            <textarea
+                name="description"
+                class="border border-gray-400 p-2 w-full h-20"
+                id="username"
+                style="resize: none; outline: none"
+            >{{ $user->description }}</textarea>
+
+            @error('description')
+            <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
+        </div>
+
+        <div class="mb-6">
+            <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
                    for="avatar"
             >
                 Avatar
@@ -64,6 +82,31 @@
             </div>
 
             @error('avatar')
+            <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
+        </div>
+
+        <div class="mb-6">
+            <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                   for="avatar"
+            >
+                Header
+            </label>
+
+            <div class="flex">
+                <input class="border border-gray-400 p-2 w-full"
+                       type="file"
+                       name="header"
+                       id="header"
+                >
+
+                <img src="{{ $user->header }}"
+                     alt="your header"
+                     width="100"
+                >
+            </div>
+
+            @error('header')
             <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
             @enderror
         </div>

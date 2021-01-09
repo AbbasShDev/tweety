@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'name', 'email', 'password','avatar'
+        'username', 'name','description', 'email', 'password','avatar','header'
     ];
 
     /**
@@ -43,6 +43,14 @@ class User extends Authenticatable
     public function getAvatarAttribute($value)
     {
         return asset($value ? "storage/$value" : '/images/default-avatar.png') ;
+    }
+
+    /**
+     * @return string
+     */
+    public function getHeaderAttribute($value)
+    {
+        return asset($value ? "storage/$value" : '/images/default-header.png') ;
     }
 
     public function setPasswordAttribute($value) {
