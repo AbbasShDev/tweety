@@ -9,7 +9,10 @@ use Illuminate\Validation\Rule;
 class ProfileController extends Controller
 {
     public function show(User $user){
-        return view('profile.show', compact('user'));
+        return view('profile.show', [
+            'user' => $user,
+            'tweets' => $user->tweets()->withLikes()->paginate(50)
+        ]);
     }
 
     public function edit(User $user) {

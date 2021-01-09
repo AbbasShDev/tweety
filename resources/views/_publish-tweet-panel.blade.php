@@ -3,13 +3,16 @@
         @csrf
         <textarea
             name="body"
-            class="w-full"
+            class="w-full h-20"
             placeholder="What's up doc?"
+            required
+            autofocus
+            style="resize: none; outline: none"
         ></textarea>
 
         <hr class="my-4">
 
-        <footer class="flex justify-between">
+        <footer class="flex justify-between items-center">
             <a href="{{ route('profile', auth()->user()) }}">
                 <img
                     src="{{ auth()->user()->avatar }}"
@@ -22,7 +25,7 @@
             </a>
             <button
                 type="submit"
-                class="bg-blue-500 rounded-lg shadow py-1 px-2 text-white"
+                class="bg-blue-500 hover:bg-blue-600 rounded-lg shadow px-5 text-base text-white h-8"
             >
                 Tweet!
             </button>

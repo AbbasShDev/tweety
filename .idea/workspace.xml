@@ -20,16 +20,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d96b6ce-2137-4f79-b7f8-cf1541fbce93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/explore.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/likable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/like-buttons.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/panel.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ExploreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ExploreController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Tweet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tweet.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/followable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/followable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/follow-button.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/follow-button.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/_friends-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/_friends-list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/_publish-tweet-panel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/_publish-tweet-panel.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/_sidebar-links.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/_sidebar-links.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/_timeline.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/_timeline.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/_tweet.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/_tweet.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profile/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -198,7 +210,9 @@
       <updated>1609766373699</updated>
       <workItem from="1609766374776" duration="11103000" />
       <workItem from="1609939889280" duration="4033000" />
-      <workItem from="1610021428012" duration="5220000" />
+      <workItem from="1610021428012" duration="5488000" />
+      <workItem from="1610117865437" duration="1414000" />
+      <workItem from="1610146518240" duration="6984000" />
     </task>
     <servers />
   </component>
@@ -222,10 +236,10 @@
       <screen x="0" y="25" width="1280" height="725" />
     </state>
     <state x="274" y="72" key="#Inspections/0.25.1280.725@0.25.1280.725" timestamp="1609940422747" />
-    <state x="206" y="186" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610027878850">
+    <state x="206" y="186" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610118315519">
       <screen x="0" y="25" width="1280" height="725" />
     </state>
-    <state x="206" y="186" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1280.725@0.25.1280.725" timestamp="1610027878850" />
+    <state x="206" y="186" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1280.725@0.25.1280.725" timestamp="1610118315519" />
     <state x="420" y="108" key="#com.intellij.ide.util.MemberChooser" timestamp="1610027153563">
       <screen x="0" y="25" width="1280" height="725" />
     </state>
@@ -234,18 +248,18 @@
       <screen x="0" y="25" width="1280" height="725" />
     </state>
     <state x="427" y="152" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.25.1280.725@0.25.1280.725" timestamp="1609941486621" />
-    <state x="345" y="103" key="NewPhpClassDialog" timestamp="1609780618569">
+    <state x="345" y="103" key="NewPhpClassDialog" timestamp="1610152414611">
       <screen x="0" y="25" width="1280" height="725" />
     </state>
-    <state x="345" y="103" key="NewPhpClassDialog/0.25.1280.725@0.25.1280.725" timestamp="1609780618569" />
+    <state x="345" y="103" key="NewPhpClassDialog/0.25.1280.725@0.25.1280.725" timestamp="1610152414611" />
     <state x="171" y="37" key="SettingsEditor" timestamp="1610022188952">
       <screen x="0" y="25" width="1280" height="725" />
     </state>
     <state x="171" y="37" key="SettingsEditor/0.25.1280.725@0.25.1280.725" timestamp="1610022188952" />
-    <state x="305" y="74" width="670" height="676" key="search.everywhere.popup" timestamp="1610028737549">
+    <state x="305" y="74" width="670" height="676" key="search.everywhere.popup" timestamp="1610154215218">
       <screen x="0" y="25" width="1280" height="725" />
     </state>
-    <state x="305" y="74" width="670" height="676" key="search.everywhere.popup/0.25.1280.725@0.25.1280.725" timestamp="1610028737549" />
+    <state x="305" y="74" width="670" height="676" key="search.everywhere.popup/0.25.1280.725@0.25.1280.725" timestamp="1610154215218" />
     <state x="367" y="300" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1610022721005">
       <screen x="0" y="25" width="1280" height="725" />
     </state>
