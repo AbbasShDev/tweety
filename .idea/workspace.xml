@@ -20,17 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d96b6ce-2137-4f79-b7f8-cf1541fbce93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/upload-image-icon.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TweetsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TweetsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Tweet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tweet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_04_141732_create_tweets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_04_141732_create_tweets_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/_publish-tweet-panel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/_publish-tweet-panel.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/_tweet.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/_tweet.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/master.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +202,7 @@
       <workItem from="1610146518240" duration="7314000" />
       <workItem from="1610212060243" duration="3170000" />
       <workItem from="1610472675087" duration="13140000" />
-      <workItem from="1610552747515" duration="6717000" />
+      <workItem from="1610552747515" duration="7696000" />
     </task>
     <servers />
   </component>
