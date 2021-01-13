@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('css-script')
 </head>
 <body>
 <div id="app">
@@ -36,5 +37,6 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"></script>
+@yield('js-script')
 </body>
 </html>
