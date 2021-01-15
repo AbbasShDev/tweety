@@ -1,3 +1,22 @@
+/*========== cusstom css ===========*/
+/* Start notification message */
+.notify-message {
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #3B82F6;
+    color: #FFFFFF;
+    font-size: 18px;
+    max-width: 170px;
+    position: fixed;
+    bottom: 20px;
+    right: -170px;
+    z-index: 9999;
+}
+/* End notification message */
+
+
+
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
 /*

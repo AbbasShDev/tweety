@@ -89,8 +89,7 @@
         <p class="text-red-700 text-sm mt-2">{{ $message }}</p>
     @enderror
 </div>
-
-@section('js-script')
+@push('js-script')
 <script>
     function showPreview(event){
         if(event.target.files.length > 0){
@@ -110,4 +109,4 @@
     }
 
 </script>
-@endsection
+@endpush

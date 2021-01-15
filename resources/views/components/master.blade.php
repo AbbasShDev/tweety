@@ -37,6 +37,6 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"></script>
-@yield('js-script')
+@stack('js-script')
 </body>
 </html>

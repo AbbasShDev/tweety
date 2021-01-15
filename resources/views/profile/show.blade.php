@@ -1,4 +1,7 @@
 <x-app>
+    {{-- Follow unfollow popup message --}}
+    <x-popup-message></x-popup-message>
+
     <header class="mb-6 relative">
         <div class="relative">
             <img src="{{ $user->header }}"
@@ -39,4 +42,23 @@
     @include ('_timeline', [
         'tweets' => $tweets
     ])
+
+@push('js-script')
+<script src="{{ asset('js/jquery-3.5.1.js') }}"></script>
+<script>
+    $('document').ready(function () {
+
+        //showing notification message
+        $('.notify-message').each(function () {
+
+            $(this).animate({
+                    right:'10px'
+                },1000,
+                function () {
+                    $(this).delay(3000).fadeOut();
+                })
+        })
+    })
+</script>
+@endpush
 </x-app>

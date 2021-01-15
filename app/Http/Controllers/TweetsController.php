@@ -32,7 +32,7 @@ class TweetsController extends Controller
            $tweet->storeImage($request->tweetImage->store('tweets-image'));
         }
 
-        return redirect(route('home'));
+        return redirect(route('home'))->with('Message','Tweet published');
     }
 
 }
