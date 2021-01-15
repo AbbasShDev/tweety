@@ -29,6 +29,10 @@ trait likable
         );
     }
 
+    public function removeLikeDislike($user) {
+        Like::where('user_id', $user->id)->delete();
+    }
+
     public function disLike($user = null) {
         $this->like($user, false);
     }
@@ -37,6 +41,7 @@ trait likable
         return (bool)$this->likes()
             ->where('tweet_id', $this->id)
             ->where('liked' , true)
+            ->where('user_id', $user->id)
             ->count();
     }
 
@@ -44,6 +49,7 @@ trait likable
         return (bool)$this->likes()
             ->where('tweet_id', $this->id)
             ->where('liked' , false)
+            ->where('user_id', $user->id)
             ->count();
     }
 }
