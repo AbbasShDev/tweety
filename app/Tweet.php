@@ -8,19 +8,11 @@ class Tweet extends Model
 {
     use likable;
     protected $fillable = ['body', 'user_id'];
-    /**
-     * @var mixed
-     */
 
-    public function user(){
-        return $this->belongsTo(User::class);
+    public function isTweetedBy(User $user){
+
+        return $this->user_id == $user->id;
     }
-
-
-    public function likes(){
-        return $this->hasMany(Like::class);
-    }
-
     public function storeImage($image) {
         $this->image()->updateOrCreate([
            'tweetImage' => $image
@@ -34,6 +26,15 @@ class Tweet extends Model
 
     public function image(){
         return $this->hasOne(TweetImage::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+
+    public function likes(){
+        return $this->hasMany(Like::class);
     }
 
 }

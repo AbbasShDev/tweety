@@ -1,4 +1,4 @@
-<div class="flex">
+
     <form method="POST"
           action="/tweets/{{ $tweet->id }}/like"
     >
@@ -55,4 +55,3 @@
             </button>
         </div>
     </form>
-</div>

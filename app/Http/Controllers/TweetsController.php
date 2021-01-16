@@ -35,4 +35,10 @@ class TweetsController extends Controller
         return redirect(route('home'))->with('Message','Tweet published');
     }
 
+    public function destroy(Tweet $tweet) {
+        $tweet->delete();
+
+        return redirect()->back()->with('Message','Tweet deleted');
+    }
+
 }
