@@ -11,7 +11,8 @@ class ProfileController extends Controller
     public function show(User $user){
         return view('profile.show', [
             'user' => $user,
-            'tweets' => $user->tweets()->withLikes()->paginate(50)
+            'tweets' => $user->tweets()->withLikes()->paginate(50),
+            'unreadNotifications' => $unreadNotifications = auth()->user()->unreadNotifications
         ]);
     }
 
@@ -19,7 +20,9 @@ class ProfileController extends Controller
 
 //        $this->authorize('edit', $user);
 //        abort_if(current_user()->isNot($user), '403');
-        return view('profile.edit', compact('user'));
+        $unreadNotifications = auth()->user()->unreadNotifications;
+
+        return view('profile.edit', compact('user', 'unreadNotifications'));
 
     }
 

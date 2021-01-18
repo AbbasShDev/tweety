@@ -2,7 +2,7 @@
     <section class="px-8">
         <main class="container mx-auto">
             <div class="flex flex-col lg:flex-row lg:justify-center">
-                <div class="order-3 lg:order-1 lg:w-32 my-4 lg:my-0">
+                <div class="order-3 lg:order-1 lg:w-34 my-4 lg:my-0">
                     @include ('_sidebar-links')
                 </div>
 

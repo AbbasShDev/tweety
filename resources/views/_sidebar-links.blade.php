@@ -5,12 +5,19 @@
         >Home</a></li>
     <li><a
             class="font-bold text-lg mb-4 block"
-            href="/explore"
+            href="{{ route('explore') }}"
         >Explore</a></li>
     <li><a
             class="font-bold text-lg mb-4 block"
-            href="#"
-        >Notifications</a></li>
+            href="{{ route('notifications') }}"
+        >Notifications
+            @if(count($unreadNotifications))
+                <span class="bg-blue-400 rounded-full px-2 text-sm text-white">
+                        {{ count($unreadNotifications) }}
+                </span>
+            @endif
+        </a>
+    </li>
     <li><a
             class="font-bold text-lg mb-4 block"
             href="#"

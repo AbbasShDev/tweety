@@ -1,4 +1,4 @@
-<x-app>
+<x-app :unreadNotifications="$unreadNotifications">
     {{-- Follow unfollow popup message --}}
     <x-popup-message></x-popup-message>
 

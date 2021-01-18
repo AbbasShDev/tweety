@@ -10,6 +10,7 @@ class ExploreController extends Controller
     public function __invoke() {
         return view('explore', [
             'users' => User::paginate(50),
+            'unreadNotifications' => $unreadNotifications = auth()->user()->unreadNotifications
         ]);
     }
 }

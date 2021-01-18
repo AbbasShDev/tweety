@@ -1,4 +1,4 @@
-<x-app>
+<x-app :unreadNotifications="$unreadNotifications">
     <div>
         @foreach ($users as $user)
             <a href="{{ $user->path() }}" class="flex items-center mb-5">

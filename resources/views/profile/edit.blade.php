@@ -1,4 +1,4 @@
-<x-app>
+<x-app :unreadNotifications="$unreadNotifications">
     <form method="POST" action="{{ $user->path() }}" enctype="multipart/form-data">
         @csrf
         @method('PATCH')

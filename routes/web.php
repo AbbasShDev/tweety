@@ -34,5 +34,8 @@ Route::post('/profile/{user:username}/follow', 'FollowController@store');
 Route::get('/profile/{user:username}/edit', 'ProfileController@edit')->middleware('can:edit,user');
 Route::patch('/profile/{user:username}', 'ProfileController@update')->middleware('can:edit,user');
 
-Route::get('/explore', 'ExploreController');
+Route::get('/explore', 'ExploreController')->name('explore');
+
+Route::get('/notifications', 'NotificationsController@show')->name('notifications');
+
 });
