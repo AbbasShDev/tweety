@@ -32,7 +32,6 @@
                            type="password"
                            name="password"
                            id="password"
-                           autocomplete="current-password"
                     >
                     @error('password')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>

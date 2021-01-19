@@ -9,7 +9,9 @@ class ExploreController extends Controller
 {
     public function __invoke() {
         return view('explore', [
-            'users' => User::inRandomOrder()->paginate(50),
+            'users' => User::where('id', '!=', auth()->user()->id)
+                ->inRandomOrder()
+                ->paginate(50),
             'unreadNotifications' => $unreadNotifications = auth()->user()->unreadNotifications
         ]);
     }

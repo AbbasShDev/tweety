@@ -42,22 +42,26 @@
         @csrf
         <textarea
             name="body"
-            class="w-full h-20"
+            class="w-full h-20 tweet-textarea"
             placeholder="What's up doc?"
             required
             autofocus
             style="resize: none; outline: none"
         >{{ old('body') }}</textarea>
 
-        <div class="tweetImage-container">
-            <label for="tweetImage">
-                <img src="{{ asset('images/upload-image-icon.svg') }}" alt="">
-            </label>
-            <input type="file" id="tweetImage" name="tweetImage" onchange="showPreview(event);">
-            <div class="preview" id="tweetImage-preview">
-                <span onclick="removeImage()">&#10006;</span>
-                <img src="">
+        <div class="flex justify-between">
+            <div class="tweetImage-container">
+                <label for="tweetImage">
+                    <img src="{{ asset('images/upload-image-icon.svg') }}" alt="">
+                </label>
+                <input type="file" id="tweetImage" name="tweetImage" onchange="showPreview(event);">
+                <div class="preview" id="tweetImage-preview">
+                    <span onclick="removeImage()">&#10006;</span>
+                    <img src="">
+                </div>
             </div>
+
+            <div class="tweet-char-count text-blue-400">0</div>
         </div>
 
         <hr class="my-4">
@@ -107,6 +111,43 @@
         var input = document.querySelector(".tweetImage-container input");
         input.value = '';
     }
+
+
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+
+        let tweetTextarea = document.querySelector(".tweet-textarea")
+        let tweetCharCount = document.querySelector(".tweet-char-count");
+
+        //set the tweet counter when page loaded
+        tweetCharCount.innerHTML = tweetTextarea.value.length;
+
+        //change the tweet counter text color depends on the length
+        if (tweetTextarea.value.length > 255){
+            tweetCharCount.classList.remove('text-blue-400')
+            tweetCharCount.classList.add('text-red-400')
+        }else {
+            tweetCharCount.classList.remove('text-red-400')
+            tweetCharCount.classList.add('text-blue-400')
+        }
+
+        tweetTextarea.onkeyup = function() {
+
+            //set the tweet counter when on key up
+            tweetCharCount.innerHTML = this.value.length;
+
+            //change the tweet counter text color depends on the length
+            if (this.value.length > 255){
+                tweetCharCount.classList.remove('text-blue-400')
+                tweetCharCount.classList.add('text-red-400')
+            }else {
+                tweetCharCount.classList.remove('text-red-400')
+                tweetCharCount.classList.add('text-blue-400')
+            }
+        };
+
+    });
 
 </script>
 @endpush

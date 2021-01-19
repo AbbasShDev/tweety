@@ -53,10 +53,10 @@ class User extends Authenticatable
         return asset($value ? "storage/$value" : '/images/default-header.png') ;
     }
 
-    public function setPasswordAttribute($value) {
-
-         $this->attributes['password'] = bcrypt($value);
-    }
+//    public function setPasswordAttribute($value) {
+//
+//         $this->attributes['password'] = bcrypt($value);
+//    }
 
 
     public function timeline(){
