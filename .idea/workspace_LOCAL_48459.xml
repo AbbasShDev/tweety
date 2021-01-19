@@ -20,13 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d96b6ce-2137-4f79-b7f8-cf1541fbce93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/components/read-notifications.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/unread-notifications.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ExploreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ExploreController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/explore.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/explore.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/notifications/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/notifications/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,14 +33,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -164,9 +150,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/profile" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -206,15 +191,7 @@
       <workItem from="1610021428012" duration="5488000" />
       <workItem from="1610117865437" duration="1414000" />
       <workItem from="1610146518240" duration="7314000" />
-      <workItem from="1610212060243" duration="3170000" />
-      <workItem from="1610472675087" duration="13140000" />
-      <workItem from="1610552747515" duration="8150000" />
-      <workItem from="1610667565134" duration="10344000" />
-      <workItem from="1610764633477" duration="6072000" />
-      <workItem from="1610846230302" duration="7045000" />
-      <workItem from="1610869523824" duration="5227000" />
-      <workItem from="1610933815393" duration="2480000" />
-      <workItem from="1611015101382" duration="1838000" />
+      <workItem from="1610212060243" duration="3474000" />
     </task>
     <servers />
   </component>
@@ -232,5 +209,39 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="274" y="72" key="#Inspections" timestamp="1609940422747">
+      <screen x="0" y="25" width="1280" height="725" />
+    </state>
+    <state x="274" y="72" key="#Inspections/0.25.1280.725@0.25.1280.725" timestamp="1609940422747" />
+    <state x="206" y="186" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610118315519">
+      <screen x="0" y="25" width="1280" height="725" />
+    </state>
+    <state x="206" y="186" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1280.725@0.25.1280.725" timestamp="1610118315519" />
+    <state x="420" y="108" key="#com.intellij.ide.util.MemberChooser" timestamp="1610027153563">
+      <screen x="0" y="25" width="1280" height="725" />
+    </state>
+    <state x="420" y="108" key="#com.intellij.ide.util.MemberChooser/0.25.1280.725@0.25.1280.725" timestamp="1610027153563" />
+    <state x="427" y="152" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609941486621">
+      <screen x="0" y="25" width="1280" height="725" />
+    </state>
+    <state x="427" y="152" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.25.1280.725@0.25.1280.725" timestamp="1609941486621" />
+    <state x="345" y="103" key="NewPhpClassDialog" timestamp="1610152414611">
+      <screen x="0" y="25" width="1280" height="725" />
+    </state>
+    <state x="345" y="103" key="NewPhpClassDialog/0.25.1280.725@0.25.1280.725" timestamp="1610152414611" />
+    <state x="171" y="37" key="SettingsEditor" timestamp="1610022188952">
+      <screen x="0" y="25" width="1280" height="725" />
+    </state>
+    <state x="171" y="37" key="SettingsEditor/0.25.1280.725@0.25.1280.725" timestamp="1610022188952" />
+    <state x="305" y="74" width="670" height="676" key="search.everywhere.popup" timestamp="1610154215218">
+      <screen x="0" y="25" width="1280" height="725" />
+    </state>
+    <state x="305" y="74" width="670" height="676" key="search.everywhere.popup/0.25.1280.725@0.25.1280.725" timestamp="1610154215218" />
+    <state x="367" y="300" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1610215337813">
+      <screen x="0" y="25" width="1280" height="725" />
+    </state>
+    <state x="367" y="300" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.25.1280.725@0.25.1280.725" timestamp="1610215337813" />
   </component>
 </project>
