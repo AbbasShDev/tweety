@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,4 +39,19 @@ Route::get('/explore', 'ExploreController')->name('explore');
 
 Route::get('/notifications', 'NotificationsController@show')->name('notifications');
 
+});
+
+Route::get('test', function (){
+    return view('test');
+});
+
+Route::post('test', function (){
+    $data = [];
+    $users = DB::table('users')->select('username')->get();
+
+    foreach ($users as $user) {
+        $raw_username = explode('@', $user->username);
+        $data[] = ['key' => $raw_username[1], 'value' => $user->username];
+    }
+    return json_encode($data);
 });

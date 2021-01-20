@@ -20,11 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d96b6ce-2137-4f79-b7f8-cf1541fbce93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/components/popup-message-script.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/test.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tweets/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tweets/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-3.5.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +212,9 @@
       <workItem from="1610846230302" duration="7045000" />
       <workItem from="1610869523824" duration="5227000" />
       <workItem from="1610933815393" duration="2480000" />
-      <workItem from="1611015101382" duration="8334000" />
+      <workItem from="1611015101382" duration="8652000" />
+      <workItem from="1611027136387" duration="285000" />
+      <workItem from="1611126549358" duration="7335000" />
     </task>
     <servers />
   </component>
@@ -232,9 +234,24 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="305" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1611017442922">
+    <state x="171" y="36" key="SettingsEditor" timestamp="1611027422337">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
-    <state x="305" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1611017442922" />
+    <state x="171" y="36" key="SettingsEditor/0.25.1280.723@0.25.1280.723" timestamp="1611027422337" />
+    <state x="305" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1611128294372">
+      <screen x="0" y="25" width="1280" height="723" />
+    </state>
+    <state x="305" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1611128294372" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/test.blade.php</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
