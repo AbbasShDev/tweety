@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link href="{{ asset('css/tribute.css') }}" rel="stylesheet">
+
     <title>Document</title>
 </head>
 <body>
@@ -28,7 +28,6 @@
 
 <script src="{{ asset('js/tribute.js') }}"></script>
 <script>
-
     var tributeAttributes = {
         values: function (text, cb) {
             remoteSearch(text, users => cb(users));
@@ -72,7 +71,7 @@
         xhr.open("POST", URL , true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
         xhr.setRequestHeader('X-CSRF-TOKEN', token);
-        xhr.send(text);
+        xhr.send("text="+text);
     }
 
     var tributeAutocompleteTestArea = new Tribute(
@@ -88,8 +87,6 @@
     tributeAutocompleteTestArea.attach(
         document.getElementById("test-autocomplete-textarea")
     );
-
-
 </script>
 </body>
 </html>

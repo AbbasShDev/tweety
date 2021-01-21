@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -45,13 +46,17 @@ Route::get('test', function (){
     return view('test');
 });
 
-Route::post('test', function (){
+Route::post('test', function (Request $request){
+
     $data = [];
-    $users = DB::table('users')->select('username')->get();
+    $users = DB::table('users')
+        ->select('username')
+        ->where('username', 'like', "%$request->text%")
+        ->get();
 
     foreach ($users as $user) {
-        $raw_username = explode('@', $user->username);
-        $data[] = ['key' => $raw_username[1], 'value' => $user->username];
+        //$raw_username = explode('@', $user->username);$raw_username[1]
+        $data[] = ['key' => $user->username, 'value' => $user->username];
     }
     return json_encode($data);
 });

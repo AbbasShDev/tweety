@@ -3,22 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
+    @stack('css-asset')
+    <!-- App CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @yield('css-script')
+    @stack('css-script')
 </head>
 <body>
 <div id="app">
@@ -35,8 +29,11 @@
 
     {{ $slot }}
 </div>
-
+<!-- Turbolinks JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"></script>
+@stack('js-asset')
+<!-- App JS -->
+<script src="{{ asset('js/app.js') }}" defer></script>
 @stack('js-script')
 </body>
 </html>

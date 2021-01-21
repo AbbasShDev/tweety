@@ -1,6 +1,4 @@
-@section('css-script')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.css" integrity="sha512-CmjeEOiBCtxpzzfuT2remy8NP++fmHRxR3LnsdQhVXzA3QqRMaJ3heF9zOB+c1lCWSwZkzSOWfTn1CdqgkW3EQ==" crossorigin="anonymous" />
-
+@push('css-script')
 <style>
     .tweetImage-container input {
         display:none;
@@ -35,19 +33,37 @@
         font-size: 10px;
     }
 
+    .tribute-container {
+        top:  20px !important;
+    }
+
+    .tweet-textarea a {
+        color: #2563EB;
+    }
+
+    .tweet-body a {
+        color: #2563EB;
+    }
+
+    .tweet-body a:hover {
+        color: #3B82F6;
+    }
+
+
+
 </style>
-@endsection
+@endpush
     <div class="border border-blue-400 rounded-lg px-8 py-6 mb-8">
     <form method="POST" action="/tweets" class="" style="border: none !important; padding: 0" enctype="multipart/form-data">
         @csrf
-        <textarea
-            name="body"
-            class="w-full h-20 tweet-textarea"
-            placeholder="What's up doc?"
-            required
-            autofocus
-            style="resize: none; outline: none"
-        >{{ old('body') }}</textarea>
+        <div id="tweet-textarea-container" style="position: relative">
+            <div
+                class="w-full h-20 tweet-textarea overflow-y-auto mb-2"
+                id="tweet-textarea"
+                style="resize: none; outline: none"
+            >{!! old('body') !!}</div>
+        </div>
+        <textarea id="textarea-body" name="body" required style="resize: none; outline: none" hidden></textarea>
 
         <div class="flex justify-between">
             <div class="tweetImage-container">
@@ -121,10 +137,10 @@
         let tweetCharCount = document.querySelector(".tweet-char-count");
 
         //set the tweet counter when page loaded
-        tweetCharCount.innerHTML = tweetTextarea.value.length;
+        tweetCharCount.innerHTML = tweetTextarea.innerText.length;
 
         //change the tweet counter text color depends on the length
-        if (tweetTextarea.value.length > 255){
+        if (tweetTextarea.innerText.length > 255){
             tweetCharCount.classList.remove('text-blue-400')
             tweetCharCount.classList.add('text-red-400')
         }else {
@@ -134,11 +150,16 @@
 
         tweetTextarea.onkeyup = function() {
 
+            let textareaBody = document.getElementById('textarea-body');
+            textareaBody.value = this.innerHTML
+
+            console.log(textareaBody.value)
+
             //set the tweet counter when on key up
-            tweetCharCount.innerHTML = this.value.length;
+            tweetCharCount.innerHTML = this.innerText.length;
 
             //change the tweet counter text color depends on the length
-            if (this.value.length > 255){
+            if (this.innerText.length > 255){
                 tweetCharCount.classList.remove('text-blue-400')
                 tweetCharCount.classList.add('text-red-400')
             }else {
@@ -149,5 +170,71 @@
 
     });
 
+</script>
+@endpush
+
+@push('css-asset')
+<!-- Tribute CSS -->
+<link href="{{ asset('css/tribute.css') }}" rel="stylesheet">
+@endpush
+@push('js-asset')
+<!-- Tribute JS -->
+<script src="{{ asset('js/tribute.js') }}"></script>
+@endpush
+
+@push('js-script')
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    var tributeAttributes = {
+        values: function (text, cb) {
+            remoteSearch(text, users => cb(users));
+
+        },
+
+        selectTemplate: function(item) {
+            return (
+                '<a href="/profile/'+item.original.key+'" target="_blank">' +
+                item.original.key +
+                "</a>"
+            );
+        }
+    };
+
+
+    function remoteSearch(text, cb) {
+        var URL = "http://tweety.to/test";
+        let xhr = new XMLHttpRequest(),
+            token = document.querySelector('meta[name="csrf-token"]').content;
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    cb(data);
+                } else if (xhr.status === 403) {
+                    cb([]);
+                }
+            }
+        };
+        xhr.open("POST", URL , true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+        xhr.setRequestHeader('X-CSRF-TOKEN', token);
+        xhr.send("text="+text);
+    }
+
+    var tributeAutocompleteTestArea = new Tribute(
+        Object.assign(
+            {
+                menuContainer: document.getElementById(
+                    "tweet-textarea-container"
+                )
+            },
+            tributeAttributes
+        )
+    );
+    tributeAutocompleteTestArea.attach(
+        document.getElementById("tweet-textarea")
+    );
+    });
 </script>
 @endpush

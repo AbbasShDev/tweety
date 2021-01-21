@@ -17,8 +17,8 @@
             <h5 class="font-bold mb-2">{{ $tweet->user->name }}</h5>
         </a>
 
-        <p class="text-sm mb-4">
-            {{ $tweet->body }}
+        <p class="text-sm mb-4 tweet-body">
+            {!! $tweet->body !!}
         </p>
         @if($tweet->image)
             <img
