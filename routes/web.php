@@ -40,23 +40,7 @@ Route::get('/explore', 'ExploreController')->name('explore');
 
 Route::get('/notifications', 'NotificationsController@show')->name('notifications');
 
+Route::post('/mention', 'MentionController@index')->name('mention');
+
 });
 
-Route::get('test', function (){
-    return view('test');
-});
-
-Route::post('test', function (Request $request){
-
-    $data = [];
-    $users = DB::table('users')
-        ->select('username')
-        ->where('username', 'like', "%$request->text%")
-        ->get();
-
-    foreach ($users as $user) {
-        //$raw_username = explode('@', $user->username);$raw_username[1]
-        $data[] = ['key' => $user->username, 'value' => $user->username];
-    }
-    return json_encode($data);
-});

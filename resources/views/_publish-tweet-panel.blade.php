@@ -37,7 +37,12 @@
         top:  20px !important;
     }
 
-    .tweet-textarea a {
+    .tweet-textarea:empty:before {
+        content: attr(data-placeholder);
+        color: #5B7183
+    }
+
+    .tweet-textarea span {
         color: #2563EB;
     }
 
@@ -49,20 +54,32 @@
         color: #3B82F6;
     }
 
+    .tribute-container ul {
+        background: #EFF6FF !important;
+    }
 
+    .tribute-container ul .highlight {
+        background: #93C5FD !important;
+    }
 
+    .tweet-btn:disabled {
+        cursor: default;
+        opacity: .5 ;
+        background-color: #3B82F6;
+    }
 </style>
 @endpush
     <div class="border border-blue-400 rounded-lg px-8 py-6 mb-8">
     <form method="POST" action="/tweets" class="" style="border: none !important; padding: 0" enctype="multipart/form-data">
         @csrf
-        <div id="tweet-textarea-container" style="position: relative">
+        <div class="tweet-textarea-container" style="position: relative">
             <div
                 class="w-full h-20 tweet-textarea overflow-y-auto mb-2"
-                id="tweet-textarea"
+                data-placeholder="What's happening?"
                 style="resize: none; outline: none"
             >{!! old('body') !!}</div>
         </div>
+
         <textarea id="textarea-body" name="body" required style="resize: none; outline: none" hidden></textarea>
 
         <div class="flex justify-between">
@@ -95,7 +112,7 @@
             </a>
             <button
                 type="submit"
-                class="bg-blue-500 hover:bg-blue-600 rounded-lg shadow px-5 text-base text-white h-8 justify-self-end"
+                class="tweet-btn bg-blue-500 hover:bg-blue-600 rounded-lg shadow px-5 text-base text-white h-8 justify-self-end"
             >
                 Tweet!
             </button>
@@ -135,7 +152,7 @@
 
         let tweetTextarea = document.querySelector(".tweet-textarea")
         let tweetCharCount = document.querySelector(".tweet-char-count");
-
+        let tweetBtn = document.querySelector('.tweet-btn')
         //set the tweet counter when page loaded
         tweetCharCount.innerHTML = tweetTextarea.innerText.length;
 
@@ -143,7 +160,9 @@
         if (tweetTextarea.innerText.length > 255){
             tweetCharCount.classList.remove('text-blue-400')
             tweetCharCount.classList.add('text-red-400')
+            tweetBtn.disabled = true;
         }else {
+            tweetBtn.disabled = false;
             tweetCharCount.classList.remove('text-red-400')
             tweetCharCount.classList.add('text-blue-400')
         }
@@ -151,9 +170,8 @@
         tweetTextarea.onkeyup = function() {
 
             let textareaBody = document.getElementById('textarea-body');
-            textareaBody.value = this.innerHTML
+            textareaBody.value = this.innerText
 
-            console.log(textareaBody.value)
 
             //set the tweet counter when on key up
             tweetCharCount.innerHTML = this.innerText.length;
@@ -162,7 +180,9 @@
             if (this.innerText.length > 255){
                 tweetCharCount.classList.remove('text-blue-400')
                 tweetCharCount.classList.add('text-red-400')
+                tweetBtn.disabled = true;
             }else {
+                tweetBtn.disabled = false;
                 tweetCharCount.classList.remove('text-red-400')
                 tweetCharCount.classList.add('text-blue-400')
             }
@@ -185,24 +205,22 @@
 @push('js-script')
 <script>
     document.addEventListener("DOMContentLoaded", function(){
+
     var tributeAttributes = {
         values: function (text, cb) {
             remoteSearch(text, users => cb(users));
 
         },
-
         selectTemplate: function(item) {
             return (
-                '<a href="/profile/'+item.original.key+'" target="_blank">' +
-                item.original.key +
-                "</a>"
+                "<span>" + item.original.value + "</span>"
             );
+
         }
     };
 
-
     function remoteSearch(text, cb) {
-        var URL = "http://tweety.to/test";
+        var URL = "{{ route('mention') }}";
         let xhr = new XMLHttpRequest(),
             token = document.querySelector('meta[name="csrf-token"]').content;
 
@@ -225,15 +243,15 @@
     var tributeAutocompleteTestArea = new Tribute(
         Object.assign(
             {
-                menuContainer: document.getElementById(
-                    "tweet-textarea-container"
+                menuContainer: document.querySelector(
+                    ".tweet-textarea-container"
                 )
             },
             tributeAttributes
         )
     );
     tributeAutocompleteTestArea.attach(
-        document.getElementById("tweet-textarea")
+        document.querySelector(".tweet-textarea")
     );
     });
 </script>

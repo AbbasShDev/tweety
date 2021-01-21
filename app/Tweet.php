@@ -9,6 +9,16 @@ class Tweet extends Model
     use likable;
     protected $fillable = ['body', 'user_id'];
 
+    /**
+     * @return string
+     */
+    public function getBodyAttribute($value)
+    {
+        $regex = "/@+[a-zA-Z0-9_.-]+/";
+        $value = preg_replace($regex, '<a href="/profile/$0">$0</a>', $value);
+        return $value;
+    }
+
     public function isTweetedBy(User $user){
 
         return $this->user_id == $user->id;
