@@ -1,3 +1,4 @@
+
 @foreach($readNotifications as $read)
     @if($read->type == 'App\Notifications\UserFollowed')
         <div class="{{ $loop->last ? '' : 'border-b border-b-gray-400' }} p-4">
@@ -12,7 +13,7 @@
             <a class="text-blue-500 hover:text-blue-700" href="{{ route('profile', $read->data['username']) }}">{{ $read->data['username'] }}</a>
             liked your tweet
             <div class=" mt-2 px-4 py-2 bg-blue-50 rounded-lg">
-                <p>{{ $read->data['tweet'] }}</p>
+                <p class="tweet-body">{!! $read->data['tweet'] !!}</p>
                 @if($read->data['tweetImage'])
                     <img class="pt-2" src="{{ asset("storage/".$read->data['tweetImage']) }}" alt="">
                 @endif
@@ -24,7 +25,7 @@
             <a class="text-blue-500 hover:text-blue-700" href="{{ route('profile', $read->data['username']) }}">{{ $read->data['username'] }}</a>
             mentioned you in a tweet
             <div class=" mt-2 px-4 py-2 bg-blue-50 rounded-lg">
-                <p>{{ $read->data['tweet'] }}</p>
+                <p class="tweet-body">{!! $read->data['tweet'] !!} </p>
                 @if($read->data['tweetImage'])
                     <img class="pt-2" src="{{ asset("storage/".$read->data['tweetImage']) }}" alt="">
                 @endif

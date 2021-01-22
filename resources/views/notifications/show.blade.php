@@ -1,4 +1,15 @@
 <x-app :unreadNotifications="$unreadNotifications">
+@push('css-script')
+    <style>
+        .tweet-body a {
+            color: #2563EB;
+        }
+
+        .tweet-body a:hover {
+            color: #3B82F6;
+        }
+    </style>
+@endpush
 
     <h1 class="text-blue-500 text-2xl">Notifications</h1>
 

@@ -6,6 +6,7 @@ use App\Notifications\UserMentioned;
 use App\Tweet;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TweetsController extends Controller
 {
@@ -55,6 +56,11 @@ class TweetsController extends Controller
     }
 
     public function destroy(Tweet $tweet) {
+
+        if ($tweet->image){
+            Storage::delete($tweet->image['tweetImage']);
+        }
+
         $tweet->delete();
 
         return redirect()->back()->with('Message','Tweet deleted');

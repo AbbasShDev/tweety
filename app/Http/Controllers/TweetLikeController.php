@@ -22,14 +22,17 @@ class TweetLikeController extends Controller
         }else{
 
             $tweet->like(current_user());
-            $tweet->user
-                ->notify(
-                    new TweetLiked(
-                    current_user()->username,
-                    $tweet->body,
-                    $tweet->image ? $tweet->image['tweetImage'] : null
-                    )
-                );
+
+            if ($tweet->user->id != current_user()->id){
+                $tweet->user
+                    ->notify(
+                        new TweetLiked(
+                            current_user()->username,
+                            $tweet->body,
+                            $tweet->image ? $tweet->image['tweetImage'] : null
+                        )
+                    );
+            }
         }
 
         return redirect()->back();

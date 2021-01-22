@@ -37,17 +37,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    /**
-     * @return string
-     */
-    public function getAvatarAttribute($value)
+
+    public function getAvatarAttribute($value, $withUrl = true)
     {
+        if (!$withUrl){
+            return $value;
+        }
+
         return asset($value ? "storage/$value" : '/images/default-avatar.png') ;
     }
 
-    /**
-     * @return string
-     */
+
     public function getHeaderAttribute($value)
     {
         return asset($value ? "storage/$value" : '/images/default-header.png') ;

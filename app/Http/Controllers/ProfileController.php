@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
 class ProfileController extends Controller
@@ -11,7 +12,9 @@ class ProfileController extends Controller
     public function show(User $user){
         return view('profile.show', [
             'user' => $user,
-            'tweets' => $user->tweets()->withLikes()->paginate(50),
+            'tweets' => $user->tweets()
+                            ->orderByDesc('id')
+                            ->withLikes()->paginate(50),
             'unreadNotifications' => $unreadNotifications = auth()->user()->unreadNotifications
         ]);
     }
@@ -53,10 +56,22 @@ class ProfileController extends Controller
         $attributes['username'] = '@'.$attributes['username'];
 
         if ($request->avatar){
+
+            if ($user->avatar){
+                $avatar = str_replace(asset("storage/"), '', $user->avatar);
+                Storage::delete($avatar);
+            }
+
             $attributes['avatar']   = $request->avatar->store('avatars');
         }
 
         if ($request->header){
+
+            if ($user->header){
+                $header = str_replace(asset("storage/"), '', $user->header);
+                Storage::delete($header);
+            }
+
             $attributes['header']   = $request->header->store('headers');
         }
 
