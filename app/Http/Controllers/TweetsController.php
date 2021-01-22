@@ -25,9 +25,11 @@ class TweetsController extends Controller
            'tweetImage'=> ['image','mimes:jpg,gif,png,jpeg','max:4096'],
         ]);
 
+
+
         $tweet = Tweet::create([
             'user_id' => auth()->id(),
-            'body' => $attributes['body']
+            'body' => strip_tags($attributes['body'])
         ]);
 
         if ($request->tweetImage){
