@@ -22,6 +22,9 @@
     <list default="true" id="0d96b6ce-2137-4f79-b7f8-cf1541fbce93" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TweetsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TweetsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/read-notifications.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/read-notifications.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/unread-notifications.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/unread-notifications.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +217,8 @@
       <workItem from="1611126549358" duration="7581000" />
       <workItem from="1611196915532" duration="6494000" />
       <workItem from="1611213855558" duration="5516000" />
-      <workItem from="1611274814860" duration="852000" />
+      <workItem from="1611274814860" duration="1767000" />
+      <workItem from="1611283755314" duration="1904000" />
     </task>
     <servers />
   </component>
@@ -234,14 +238,18 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="378" y="147" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611284229157">
+      <screen x="0" y="25" width="1280" height="723" />
+    </state>
+    <state x="378" y="147" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1280.723@0.25.1280.723" timestamp="1611284229157" />
     <state x="171" y="36" key="SettingsEditor" timestamp="1611027422337">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="171" y="36" key="SettingsEditor/0.25.1280.723@0.25.1280.723" timestamp="1611027422337" />
-    <state x="305" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1611128294372">
+    <state x="305" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1611283817797">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
-    <state x="305" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1611128294372" />
+    <state x="305" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1611283817797" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

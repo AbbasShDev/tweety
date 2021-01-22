@@ -18,6 +18,10 @@
 .notify-message.show {
     right: 10px;
 }
+
+button:focus {
+outline:none !important;
+}
 /* End notification message */
 
 

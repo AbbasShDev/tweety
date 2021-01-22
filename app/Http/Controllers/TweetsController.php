@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\UserMentioned;
 use App\Tweet;
+use App\User;
 use Illuminate\Http\Request;
 
 class TweetsController extends Controller
@@ -25,8 +27,6 @@ class TweetsController extends Controller
            'tweetImage'=> ['image','mimes:jpg,gif,png,jpeg','max:4096'],
         ]);
 
-
-
         $tweet = Tweet::create([
             'user_id' => auth()->id(),
             'body' => strip_tags($attributes['body'])
@@ -34,6 +34,21 @@ class TweetsController extends Controller
 
         if ($request->tweetImage){
            $tweet->storeImage($request->tweetImage->store('tweets-image'));
+        }
+
+        $regex = "/@+[a-zA-Z0-9_.-]+/";
+        preg_match_all($regex, $attributes['body'],$mentions);
+        $mentions = array_unique($mentions[0]);
+
+        foreach ($mentions as $mention){
+            $user = User::where('username',$mention)->first();
+
+            $user->notify(
+                new UserMentioned(
+                    current_user()->username,
+                    $attributes['body'],
+                    $tweet->image ? $tweet->image['tweetImage'] : null)
+            );
         }
 
         return redirect(route('home'))->with('Message','Tweet published');
