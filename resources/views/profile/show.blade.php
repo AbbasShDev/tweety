@@ -43,12 +43,21 @@
                     </a>
                 @endcan
 
-
                 <x-follow-button :user="$user"></x-follow-button>
+
             </div>
         </div>
 
         <p class="text-sm">{{ $user->description }}</p>
+
+        <p class="pt-4">
+            <a href="{{ route('followings', $user) }}" class="mr-3 hover:underline">
+                <span class="font-bold">{{ $user->followingsCount() }}</span>
+                <span class="text-gray-600">Following</span></a>
+            <a href="{{ route('followers', $user) }}" class="hover:underline">
+                <span class="font-bold">{{ $user->followersCount() }}</span>
+                <span class="text-gray-600">Followers</span></a>
+        </p>
 
     </header>
 

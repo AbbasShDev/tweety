@@ -27,11 +27,26 @@ trait followable
             'following_user_id');
     }
 
+    public function followers(){
+        return $this->belongsToMany(
+            User::class,
+            'follows',
+            'following_user_id',
+            'user_id');
+    }
 
     public function following(User $user) {
         return
             $this->follows()
             ->where('following_user_id', $user->id)
                 ->exists();
+    }
+
+    public function followingsCount(){
+        return $this->follows()->where('user_id', $this->id)->count();
+    }
+
+    public function followersCount(){
+        return Follow::where('following_user_id', $this->id)->count();
     }
 }

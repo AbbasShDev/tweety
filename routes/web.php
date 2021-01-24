@@ -38,6 +38,9 @@ Route::post('/{user:username}/follow', 'FollowController@store')->name('profile.
 Route::get('/{user:username}/edit', 'ProfileController@edit')->middleware('can:edit,user')->name('profile.edit');
 Route::patch('/{user:username}', 'ProfileController@update')->middleware('can:edit,user');
 
+Route::get('/{user:username}/followers', 'FollowersController@index')->name('followers');
+Route::get('/{user:username}/followings', 'FollowingsController@index')->name('followings');
+
 Route::post('/tweets/{tweet}/like', 'TweetLikeController@store');
 Route::delete('/tweets/{tweet}/like', 'TweetLikeController@destroy');
 
