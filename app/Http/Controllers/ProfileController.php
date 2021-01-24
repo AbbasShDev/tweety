@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
@@ -54,6 +55,7 @@ class ProfileController extends Controller
         ]);
 
         $attributes['username'] = '@'.$attributes['username'];
+        $attributes['password'] = Hash::make($attributes['password']);
 
         if ($request->avatar){
 
