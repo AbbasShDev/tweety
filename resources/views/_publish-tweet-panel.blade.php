@@ -70,7 +70,7 @@
 </style>
 @endpush
     <div class="border border-blue-400 rounded-lg px-8 py-6 mb-8">
-    <form method="POST" action="/tweets" class="" style="border: none !important; padding: 0" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('home') }}" class="" style="border: none !important; padding: 0" enctype="multipart/form-data">
         @csrf
         <div class="tweet-textarea-container" style="position: relative">
             <div
@@ -114,7 +114,7 @@
                 type="submit"
                 class="tweet-btn bg-blue-500 hover:bg-blue-600 rounded-lg shadow px-5 text-base text-white h-8 justify-self-end"
             >
-                Tweet!
+                Tweet <i class="fas fa-feather-alt fa-fw"></i>
             </button>
         </footer>
     </form>

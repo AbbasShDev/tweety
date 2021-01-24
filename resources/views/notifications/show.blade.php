@@ -1,3 +1,4 @@
+@section('title', 'Notifications')
 <x-app :unreadNotifications="$unreadNotifications">
 @push('css-script')
     <style>

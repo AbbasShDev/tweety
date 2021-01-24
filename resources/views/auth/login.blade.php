@@ -1,7 +1,13 @@
+@section('title', 'Login')
 <x-master>
     <div class="container mx-auto flex justify-center">
         <x-panel>
-            <x-slot name="heading">Login</x-slot>
+            <x-slot name="heading">
+                Login
+                <a href="{{ route('register') }}" class="border border-gray-700 text-sm hover:bg-gray-700 hover:text-white rounded-lg py-1 px-2 float-right">
+                    Register
+                </a>
+            </x-slot>
             <form method="POST" action="{{ route('login') }}">
             @csrf
                 <div class="mb-6">
@@ -66,6 +72,7 @@
 
                     <a href="{{ route('password.request') }}" class="text-xs text-gray-700">Forgot Your Password?</a>
                 </div>
+
             </form>
         </x-panel>
     </div>

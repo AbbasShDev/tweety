@@ -1,3 +1,4 @@
+@section('title', 'Edit profile')
 <x-app :unreadNotifications="$unreadNotifications">
     <form method="POST" action="{{ $user->path() }}" enctype="multipart/form-data">
         @csrf

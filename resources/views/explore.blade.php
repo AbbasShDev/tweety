@@ -1,3 +1,4 @@
+@section('title', 'Explore')
 <x-app :unreadNotifications="$unreadNotifications">
 
     <h1 class="text-blue-500 text-2xl">Explore</h1>

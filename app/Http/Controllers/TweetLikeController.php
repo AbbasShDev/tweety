@@ -40,8 +40,7 @@ class TweetLikeController extends Controller
 
     public function destroy(Tweet $tweet) {
 
-        if ($tweet->isLikedBy(current_user())){
-
+        if ($tweet->isLikedBy(current_user()) && $tweet->user->id != current_user()->id){
             $tweet->user->notifications()
                 ->where('type', 'App\Notifications\TweetLiked')
                 ->where('data->username', auth()->user()->username)

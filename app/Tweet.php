@@ -15,7 +15,7 @@ class Tweet extends Model
     public function getBodyAttribute($value)
     {
         $regex = "/@+[a-zA-Z0-9_.-]+/";
-        $value = preg_replace($regex, '<a href="/profile/$0" target="_blank">$0</a>', $value);
+        $value = preg_replace($regex, '<a href="/$0" target="_blank">$0</a>', $value);
         return $value;
     }
 

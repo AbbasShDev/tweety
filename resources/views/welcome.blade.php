@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ config('app.name') }} | @yield('title', 'Welcome')</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -67,18 +67,18 @@
         <div class="flex-center position-ref full-height">
 
             <div class="content">
-                <div class="title m-b-md">
-                    Tweety
+                <div class="title">
+                    <img src="{{ asset('/images/main-logo.png') }}" alt="Logo" style="width: 300px">
                 </div>
 
                 <div class="links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}" style="color: #2e7c93;">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}" style="color: #2e7c93;">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}" style="color: #2e7c93;">Register</a>
                         @endif
                     @endauth
                 </div>

@@ -1,3 +1,4 @@
+@section('title', 'Home')
 <x-app :unreadNotifications="$unreadNotifications">
 {{-- Tweet Published popup message --}}
 <x-popup-message></x-popup-message>

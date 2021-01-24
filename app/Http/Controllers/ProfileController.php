@@ -79,6 +79,6 @@ class ProfileController extends Controller
 
         $user->update($attributes);
 
-        return redirect($user->path());
+        return redirect($user->path())->with('Message', "Profile updated");
     }
 }

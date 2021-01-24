@@ -1,7 +1,13 @@
+@section('title', 'Register')
 <x-master>
     <div class="container mx-auto flex justify-center">
         <x-panel>
-            <x-slot name="heading">Register</x-slot>
+            <x-slot name="heading">
+                Register
+                <a href="{{ route('login') }}" class="border border-gray-700 text-sm hover:bg-gray-700 hover:text-white rounded-lg py-1 px-2 float-right">
+                    Login
+                </a>
+            </x-slot>
 
             <form method="POST" action="{{ route('register') }}">
                 @csrf

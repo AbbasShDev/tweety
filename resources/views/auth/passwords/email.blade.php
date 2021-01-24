@@ -1,3 +1,4 @@
+@section('title', 'Reset Password')
 <x-master>
     <div class="container mx-auto flex justify-center">
         <x-panel>

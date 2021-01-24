@@ -1,3 +1,4 @@
+@section('title', 'Verify Email')
 <x-master>
 
 <div class="container">
