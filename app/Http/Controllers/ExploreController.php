@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 
-class ExploreController extends Controller
-{
-    public function __invoke() {
+class ExploreController extends Controller {
+
+    public function __invoke()
+    {
         return view('explore', [
-            'users' => User::where('id', '!=', auth()->user()->id)
+            'users'               => User::where('id', '!=', auth()->user()->id)
                 ->inRandomOrder()
                 ->paginate(50),
             'unreadNotifications' => $unreadNotifications = auth()->user()->unreadNotifications

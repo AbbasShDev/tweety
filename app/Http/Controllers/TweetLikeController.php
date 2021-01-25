@@ -6,11 +6,12 @@ use App\Notifications\TweetLiked;
 use App\Tweet;
 use Illuminate\Http\Request;
 
-class TweetLikeController extends Controller
-{
-    public function store(Tweet $tweet) {
+class TweetLikeController extends Controller {
 
-        if ($tweet->isLikedBy(current_user())){
+    public function store(Tweet $tweet)
+    {
+
+        if ($tweet->isLikedBy(current_user())) {
             $tweet->removeLikeDislike(current_user());
 
             $tweet->user->notifications()
@@ -19,11 +20,11 @@ class TweetLikeController extends Controller
                 ->first()
                 ->delete();
 
-        }else{
+        } else {
 
             $tweet->like(current_user());
 
-            if ($tweet->user->id != current_user()->id){
+            if ($tweet->user->id != current_user()->id) {
                 $tweet->user
                     ->notify(
                         new TweetLiked(
@@ -38,9 +39,10 @@ class TweetLikeController extends Controller
         return redirect()->back();
     }
 
-    public function destroy(Tweet $tweet) {
+    public function destroy(Tweet $tweet)
+    {
 
-        if ($tweet->isLikedBy(current_user()) && $tweet->user->id != current_user()->id){
+        if ($tweet->isLikedBy(current_user()) && $tweet->user->id != current_user()->id) {
             $tweet->user->notifications()
                 ->where('type', 'App\Notifications\TweetLiked')
                 ->where('data->username', auth()->user()->username)
@@ -48,9 +50,9 @@ class TweetLikeController extends Controller
                 ->delete();
         }
 
-        if ($tweet->isDisLikedBy(current_user())){
+        if ($tweet->isDisLikedBy(current_user())) {
             $tweet->removeLikeDislike(current_user());
-        }else{
+        } else {
             $tweet->disLike(current_user());
         }
 

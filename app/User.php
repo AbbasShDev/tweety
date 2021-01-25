@@ -6,8 +6,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable {
+
     use Notifiable, followable;
 
     /**
@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'name','description', 'email', 'password','avatar','header'
+        'username', 'name', 'description', 'email', 'password', 'avatar', 'header'
     ];
 
     /**
@@ -40,21 +40,22 @@ class User extends Authenticatable
 
     public function getAvatarAttribute($value, $withUrl = true)
     {
-        if (!$withUrl){
+        if ( ! $withUrl) {
             return $value;
         }
 
-        return asset($value ? "storage/$value" : '/images/default-avatar.png') ;
+        return asset($value ? "storage/$value" : '/images/default-avatar.png');
     }
 
 
     public function getHeaderAttribute($value)
     {
-        return asset($value ? "storage/$value" : '/images/default-header.png') ;
+        return asset($value ? "storage/$value" : '/images/default-header.png');
     }
 
 
-    public function timeline(){
+    public function timeline()
+    {
 
         $friends = $this->follows()->pluck('id');
 
@@ -66,7 +67,8 @@ class User extends Authenticatable
                 ->paginate(50);
     }
 
-    public function tweets(){
+    public function tweets()
+    {
         return $this->hasMany(Tweet::class);
     }
 
@@ -75,17 +77,19 @@ class User extends Authenticatable
         return 'name';
     }
 
-    public function path($append = ''){
+    public function path($append = '')
+    {
 
-        $path =  route('profile', $this->username);
+        $path = route('profile', $this->username);
 
         return $append ? "$path/$append" : $path;
 
     }
 
-    public function plainUsername() {
+    public function plainUsername()
+    {
 
-        $username = explode('@',$this->username);
+        $username = explode('@', $this->username);
 
         return $username[1];
     }

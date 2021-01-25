@@ -10,7 +10,7 @@ class FollowingsController extends Controller
     public function index(User $user){
 
         return view('profile.followings', [
-            'users' => $user->follows()->paginate(50),
+            'users'               => $user->follows()->paginate(50),
             'unreadNotifications' => $unreadNotifications = auth()->user()->unreadNotifications
         ]);
 

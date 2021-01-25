@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class NotificationsController extends Controller
-{
-    public function show() {
+class NotificationsController extends Controller {
+
+    public function show()
+    {
 
         $unreadNotifications = auth()->user()->unreadNotifications;
         $readNotifications = auth()->user()->readNotifications;
