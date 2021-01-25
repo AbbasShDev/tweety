@@ -19,7 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d96b6ce-2137-4f79-b7f8-cf1541fbce93" name="Default Changelist" comment="" />
+    <list default="true" id="0d96b6ce-2137-4f79-b7f8-cf1541fbce93" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -218,6 +222,7 @@
       <workItem from="1611468041530" duration="14497000" />
       <workItem from="1611513665591" duration="1376000" />
       <workItem from="1611582148055" duration="1748000" />
+      <workItem from="1611602156032" duration="1173000" />
     </task>
     <servers />
   </component>
@@ -241,6 +246,10 @@
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="274" y="71" key="#Inspections/0.25.1280.723@0.25.1280.723" timestamp="1611481614881" />
+    <state x="0" y="185" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1611602254814">
+      <screen x="0" y="25" width="1280" height="723" />
+    </state>
+    <state x="0" y="185" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1280.723@0.25.1280.723" timestamp="1611602254814" />
     <state x="378" y="147" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611483095653">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
