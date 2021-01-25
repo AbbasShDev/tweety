@@ -40,15 +40,15 @@
         "classmap": [
             "database/seeds",
             "database/factories"
+        ],
+        "files": [
+            "app/heplpers.php"
         ]
     },
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        },
-        "files": [
-            "app/heplpers.php"
-        ]
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
