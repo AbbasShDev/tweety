@@ -36,7 +36,7 @@
     {{ $slot }}
 </div>
 <!-- Turbolinks JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"></script>
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"></script>--}}
 @stack('js-asset')
 <!-- App JS -->
 <script src="{{ asset('js/app.js') }}" defer></script>
