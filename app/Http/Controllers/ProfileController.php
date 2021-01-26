@@ -69,6 +69,7 @@ class ProfileController extends Controller {
             }
 
             $attributes['avatar'] = $request->avatar->store('avatars');
+
         }
 
         if ($request->header) {
