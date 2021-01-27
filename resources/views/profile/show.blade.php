@@ -16,11 +16,11 @@
 
     <header class="mb-6 relative">
         <div class="relative">
-            <img src="{{ $user->header }}"
+            <img src="{{ $user->headerUrl() }}"
                  alt=""
                  class="mb-2 object-scale-down md:object-fill h-48 w-full"
             >
-            <img src="{{ $user->avatar }}"
+            <img src="{{ $user->avatarUrl() }}"
                  alt=""
                  class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2 mb-2 w-24 md:w-40"
                  style="left: 50%"

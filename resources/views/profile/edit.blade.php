@@ -76,7 +76,7 @@
                        id="avatar"
                 >
 
-                <img src="{{ $user->avatar }}"
+                <img src="{{ $user->avatarUrl() }}"
                      alt="your avatar"
                      width="40"
                 >
@@ -101,7 +101,7 @@
                        id="header"
                 >
 
-                <img src="{{ $user->header }}"
+                <img src="{{ $user->headerUrl() }}"
                      alt="your header"
                      width="100"
                 >

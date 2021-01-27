@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Aws\S3\S3Client;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -64,22 +65,20 @@ class ProfileController extends Controller {
         if ($request->avatar) {
 
             if ($user->avatar) {
-                $avatar = str_replace(asset("storage/"), '', $user->avatar);
-                Storage::delete($avatar);
+                Storage::disk('s3')->delete($user->avatar);
             }
 
-            $attributes['avatar'] = $request->avatar->store('avatars');
+            $attributes['avatar'] = $request->avatar->store('avatars', 's3');
 
         }
 
         if ($request->header) {
 
             if ($user->header) {
-                $header = str_replace(asset("storage/"), '', $user->header);
-                Storage::delete($header);
+                Storage::disk('s3')->delete($user->header);
             }
 
-            $attributes['header'] = $request->header->store('headers');
+            $attributes['header'] = $request->header->store('headers', 's3');
         }
 
         $user->update($attributes);

@@ -2,7 +2,7 @@
     <div class="flex justify-center">
         <a href="{{ route('profile', $tweet->user) }}">
             <img
-                src="{{ $tweet->user->avatar }}"
+                src="{{ $tweet->user->avatarUrl() }}"
                 alt=""
                 class="rounded-full object-center"
                 width="50"

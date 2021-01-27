@@ -6,7 +6,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-5">
         @foreach ($users as $user)
             <a href="{{ $user->path() }}" class="flex items-center mb-5">
-                <img src="{{ $user->avatar }}"
+                <img src="{{ $user->avatarUrl() }}"
                      alt="{{ $user->username }}'s avatar"
                      width="60"
                      class="mr-4 rounded"

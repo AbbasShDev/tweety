@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable {
 
@@ -38,19 +39,23 @@ class User extends Authenticatable {
     ];
 
 
-    public function getAvatarAttribute($value, $withUrl = true)
+    public function avatarUrl()
     {
-        if ( ! $withUrl) {
-            return $value;
+        if ($this->avatar){
+            return Storage::disk('s3')->url($this->avatar);
         }
 
-        return asset($value ? "storage/$value" : '/images/default-avatar.png');
+        return asset('/images/default-avatar.png');
     }
 
 
-    public function getHeaderAttribute($value)
+    public function headerUrl()
     {
-        return asset($value ? "storage/$value" : '/images/default-header.png');
+        if ($this->header){
+            return Storage::disk('s3')->url($this->header);
+        }
+
+        return asset('/images/default-header.png');
     }
 
 

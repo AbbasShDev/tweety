@@ -103,7 +103,7 @@
         <footer class="flex justify-between items-center">
             <a href="{{ route('profile', auth()->user()) }}">
                 <img
-                    src="{{ auth()->user()->avatar }}"
+                    src="{{ auth()->user()->avatarUrl() }}"
                     alt="your avatar"
                     class="rounded-full mr-2"
                     width="50"

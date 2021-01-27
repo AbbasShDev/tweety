@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Tweet extends Model {
 
@@ -36,7 +37,7 @@ class Tweet extends Model {
 
     public function getImage()
     {
-        return asset('storage/' . $this->image['tweetImage']);
+        return Storage::disk('s3')->url($this->image['tweetImage']);
     }
 
 

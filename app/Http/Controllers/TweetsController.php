@@ -34,7 +34,7 @@ class TweetsController extends Controller {
         ]);
 
         if ($request->tweetImage) {
-            $tweet->storeImage($request->tweetImage->store('tweets-image'));
+            $tweet->storeImage($request->tweetImage->store('tweets-image', 's3'));
         }
 
         $regex = "/@+[a-zA-Z0-9_.-]+/";
@@ -59,7 +59,7 @@ class TweetsController extends Controller {
     {
 
         if ($tweet->image) {
-            Storage::delete($tweet->image['tweetImage']);
+            Storage::disk('s3')->delete($tweet->image['tweetImage']);
         }
 
         $tweet->delete();
