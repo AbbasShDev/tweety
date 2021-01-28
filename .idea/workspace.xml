@@ -23,7 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d96b6ce-2137-4f79-b7f8-cf1541fbce93" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_04_141732_create_tweets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_04_141732_create_tweets_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +230,7 @@
       <workItem from="1611648918475" duration="1136000" />
       <workItem from="1611670069244" duration="1018000" />
       <workItem from="1611753718161" duration="4334000" />
-      <workItem from="1611829333401" duration="1478000" />
+      <workItem from="1611829333401" duration="1910000" />
     </task>
     <servers />
   </component>
@@ -266,9 +266,9 @@
       <screen x="0" y="25" width="1280" height="723" />
     </state>
     <state x="14" y="36" width="1266" height="700" key="SettingsEditor/0.25.1280.723@0.25.1280.723" timestamp="1611514509142" />
-    <state x="305" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1611830952365">
+    <state x="305" y="72" width="670" height="676" key="search.everywhere.popup" timestamp="1611831973462">
       <screen x="0" y="25" width="1280" height="723" />
     </state>
-    <state x="305" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1611830952365" />
+    <state x="305" y="72" width="670" height="676" key="search.everywhere.popup/0.25.1280.723@0.25.1280.723" timestamp="1611831973462" />
   </component>
 </project>
