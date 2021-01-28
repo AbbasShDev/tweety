@@ -173,6 +173,7 @@
                 let textareaBody = document.getElementById('textarea-body');
                 textareaBody.value = this.innerText
 
+                console.log(this.innerText)
 
                 //set the tweet counter when on key up
                 tweetCharCount.innerHTML = this.innerText.length;

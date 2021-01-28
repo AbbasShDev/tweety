@@ -16,7 +16,7 @@
             <h5 class="font-bold mb-2">{{ $tweet->user->name }}</h5>
         </a>
 
-        <div> {{  \Illuminate\Mail\Markdown::parse($tweet->body)  }} </div>
+        <div class="break-words"> {{  \Illuminate\Mail\Markdown::parse($tweet->body)  }} </div>
 
         @if($tweet->image)
             <img
