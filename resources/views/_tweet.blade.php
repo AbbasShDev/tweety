@@ -22,7 +22,7 @@
             <img
                 src="{{ $tweet->getImage() }}"
                 alt="Tweet image"
-                class="mb-4 mt-2"
+                class="mb-4 mt-2 rounded-lg"
             >
         @endif
         <div class="flex mt-4">
