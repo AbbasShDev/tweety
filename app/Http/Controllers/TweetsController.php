@@ -44,12 +44,14 @@ class TweetsController extends Controller {
         foreach ($mentions as $mention) {
             $user = User::where('username', $mention)->first();
 
-            $user->notify(
-                new UserMentioned(
-                    current_user()->username,
-                    $attributes['body'],
-                    $tweet->image ? $tweet->image['tweetImage'] : null)
-            );
+            if ($user->username != current_user()->username){
+                $user->notify(
+                    new UserMentioned(
+                        current_user()->username,
+                        $attributes['body'],
+                        $tweet->image ? $tweet->image['tweetImage'] : null)
+                );
+            }
         }
 
         return redirect(route('home'))->with('Message', 'Tweet published');
